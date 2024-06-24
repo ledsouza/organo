@@ -1,8 +1,14 @@
 import "./App.css";
-import Banner from "./componentes/Banner/Banner";
+import Banner from "./components/Banner";
+import TextInput from "./components/TextInput";
 
 function App() {
-    return <Banner />;
+    return (
+        <>
+            <Banner />
+            <TextInput />
+        </>
+    );
 }
 
 export default App;
