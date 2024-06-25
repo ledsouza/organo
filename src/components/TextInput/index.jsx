@@ -1,23 +1,27 @@
 import "./TextInput.css";
 import PropTypes from "prop-types";
 
-const TextInput = (props) => {
+const TextInput = ({ label, placeholder, value, onChange, required = false }) => {
     return (
         <div className="text-input">
-            <label>{props.label}</label>
-            <input type="text" placeholder={props.placeholder} required={props.required} />
+            <label>{label}</label>
+            <input
+                type="text"
+                placeholder={placeholder}
+                required={required}
+                value={value}
+                onChange={onChange}
+            />
         </div>
     );
 };
 
-TextInput.defaultProps = {
-    required: false,
-};
-
 TextInput.propTypes = {
     label: PropTypes.string.isRequired,
-    placeholder: PropTypes.string.isRequired,
-    required: PropTypes.bool.isRequired,
+    placeholder: PropTypes.string,
+    required: PropTypes.bool,
+    value: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
 };
 
 export default TextInput;

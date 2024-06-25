@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Button from "../Button";
 import Dropdown from "../Dropdown";
 import TextInput from "../TextInput";
@@ -14,19 +15,47 @@ const Form = () => {
         "Inovação e Gestão",
     ];
 
-    const addCard = (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
-        console.log("Cartão adicionado");
+        console.log("Cartão adicionado => ", nome, cargo, imagem, time);
     };
+
+    const [nome, setNome] = useState("");
+    const [cargo, setCargo] = useState("");
+    const [imagem, setImagem] = useState("");
+    const [time, setTime] = useState("");
 
     return (
         <section className="container-form">
-            <form onSubmit={addCard}>
+            <form onSubmit={handleSubmit}>
                 <h2>Preencha os dados para criar o card do colaborador.</h2>
-                <TextInput label="Nome" placeholder="Digite o seu nome" required={true} />
-                <TextInput label="Cargo" placeholder="Digite o seu cargo" required={true} />
-                <TextInput label="Imagem" placeholder="Informe o endereço da imagem" />
-                <Dropdown label="Time" itens={times} required={true} />
+                <TextInput
+                    label="Nome"
+                    placeholder="Digite o seu nome"
+                    required={true}
+                    value={nome}
+                    onChange={(e) => setNome(e.target.value)}
+                />
+                <TextInput
+                    label="Cargo"
+                    placeholder="Digite o seu cargo"
+                    required={true}
+                    value={cargo}
+                    onChange={(e) => setCargo(e.target.value)}
+                />
+                <TextInput
+                    label="Imagem"
+                    placeholder="Informe o endereço da imagem"
+                    value={imagem}
+                    onChange={(e) => setImagem(e.target.value)}
+                />
+                <Dropdown
+                    label="Time"
+                    itens={times}
+                    required={true}
+                    value={time}
+                    onChange={(e) => setTime(e.target.value)}
+                />
                 <Button>Criar card</Button>
             </form>
         </section>
