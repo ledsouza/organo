@@ -1,0 +1,21 @@
+.container-form {
+    display: flex;
+    justify-content: center;
+    margin: 80px 160px;
+}
+
+.container-form form {
+    background-color: var(--cor-terciaria);
+    padding: 30px 60px;
+    width: 80%;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 7px 7px 14px rgba(0, 0, 0, 0.08);
+}
+
+.container-form h2 {
+    font-family: var(--fonte-titulo);
+    font-weight: 400;
+    font-size: 2em;
+    margin-bottom: 40px;
+}
