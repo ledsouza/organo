@@ -22,4 +22,7 @@
     padding: 24px 0 24px 21px;
     border: none;
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+    background-image: url('data:image/svg+xml,<%3Fxml version="1.0" %3F><svg height="48" viewBox="0 0 48 48" width="36" xmlns="http://www.w3.org/2000/svg"><path d="M14 20l10 10 10-10z"/><path d="M0 0h48v48h-48z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right;
 }
