@@ -3,6 +3,7 @@ import "./App.css";
 import Banner from "./components/Banner";
 import Form from "./components/Form";
 import Time from "./components/Time";
+import Footer from "./components/Footer";
 
 function App() {
     const [colaboradores, setColaboradores] = useState([]);
@@ -64,6 +65,7 @@ function App() {
                     )}
                 />
             ))}
+            <Footer />
         </>
     );
 }

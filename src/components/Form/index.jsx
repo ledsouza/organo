@@ -6,6 +6,11 @@ import TextInput from "../TextInput";
 import "./Form.css";
 
 const Form = (props) => {
+    const [nome, setNome] = useState("");
+    const [cargo, setCargo] = useState("");
+    const [imagem, setImagem] = useState("");
+    const [time, setTime] = useState(props.times[0]);
+
     const handleSubmit = (event) => {
         event.preventDefault();
         props.onSubmit({
@@ -14,12 +19,12 @@ const Form = (props) => {
             imagem,
             time,
         });
-    };
 
-    const [nome, setNome] = useState("");
-    const [cargo, setCargo] = useState("");
-    const [imagem, setImagem] = useState("");
-    const [time, setTime] = useState(props.times[0]);
+        setNome("");
+        setCargo("");
+        setImagem("");
+        setTime(props.times[0]);
+    };
 
     return (
         <section className="container-form">

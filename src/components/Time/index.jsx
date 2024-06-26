@@ -13,7 +13,7 @@ const Line = styled.div`
 `;
 
 const Time = (props) => {
-    return (
+    return props.colaboradores.length > 0 ? (
         <section className="time" style={{ backgroundColor: props.corFundo }}>
             <h3>{props.nome}</h3>
             <Line color={props.corDestaque} />
@@ -28,6 +28,8 @@ const Time = (props) => {
                 ))}
             </div>
         </section>
+    ) : (
+        ""
     );
 };
 
