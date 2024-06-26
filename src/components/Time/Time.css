@@ -1,0 +1,11 @@
+.time {
+    text-align: center;
+    padding: 32px;
+}
+
+.time h3 {
+    font-family: var(--fonte-titulo);
+    font-weight: 400;
+    font-size: 32px;
+    padding-bottom: 12px;
+}
