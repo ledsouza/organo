@@ -1,6 +1,7 @@
 import "./Time.css";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import Colaborador from "../Colaborador";
 
 const Line = styled.div`
     display: inline-block;
@@ -16,6 +17,7 @@ const Time = (props) => {
         <section className="time" style={{ backgroundColor: props.corFundo }}>
             <h3>{props.nome}</h3>
             <Line color={props.corDestaque} />
+            <Colaborador />
         </section>
     );
 };
