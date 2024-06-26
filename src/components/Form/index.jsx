@@ -1,10 +1,11 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 import Button from "../Button";
 import Dropdown from "../Dropdown";
 import TextInput from "../TextInput";
 import "./Form.css";
 
-const Form = () => {
+const Form = (props) => {
     const times = [
         "Programação",
         "Front-End",
@@ -17,13 +18,18 @@ const Form = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log("Cartão adicionado => ", nome, cargo, imagem, time);
+        props.onSubmit({
+            nome,
+            cargo,
+            imagem,
+            time,
+        });
     };
 
     const [nome, setNome] = useState("");
     const [cargo, setCargo] = useState("");
     const [imagem, setImagem] = useState("");
-    const [time, setTime] = useState("");
+    const [time, setTime] = useState(times[0]);
 
     return (
         <section className="container-form">
@@ -60,6 +66,10 @@ const Form = () => {
             </form>
         </section>
     );
+};
+
+Form.propTypes = {
+    onSubmit: PropTypes.func.isRequired,
 };
 
 export default Form;
