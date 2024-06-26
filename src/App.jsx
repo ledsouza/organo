@@ -52,7 +52,7 @@ function App() {
     return (
         <>
             <Banner />
-            <Form onSubmit={handleSubmit} />
+            <Form times={times.map((time) => time.nome)} onSubmit={handleSubmit} />
             {times.map((time) => (
                 <Time
                     key={time.nome}

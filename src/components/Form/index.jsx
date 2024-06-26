@@ -6,16 +6,6 @@ import TextInput from "../TextInput";
 import "./Form.css";
 
 const Form = (props) => {
-    const times = [
-        "Programação",
-        "Front-End",
-        "Data Science",
-        "Devops",
-        "UX e Design",
-        "Mobile",
-        "Inovação e Gestão",
-    ];
-
     const handleSubmit = (event) => {
         event.preventDefault();
         props.onSubmit({
@@ -29,7 +19,7 @@ const Form = (props) => {
     const [nome, setNome] = useState("");
     const [cargo, setCargo] = useState("");
     const [imagem, setImagem] = useState("");
-    const [time, setTime] = useState(times[0]);
+    const [time, setTime] = useState(props.times[0]);
 
     return (
         <section className="container-form">
@@ -57,7 +47,7 @@ const Form = (props) => {
                 />
                 <Dropdown
                     label="Time"
-                    itens={times}
+                    itens={props.times}
                     required={true}
                     value={time}
                     onChange={(e) => setTime(e.target.value)}
@@ -69,6 +59,7 @@ const Form = (props) => {
 };
 
 Form.propTypes = {
+    times: PropTypes.array.isRequired,
     onSubmit: PropTypes.func.isRequired,
 };
 
