@@ -46,7 +46,7 @@ function App() {
     ];
 
     const handleSubmit = (colaborador) => {
-        console.log(colaborador);
+        setColaboradores([...colaboradores, colaborador]);
     };
 
     return (
@@ -59,6 +59,9 @@ function App() {
                     nome={time.nome}
                     corFundo={time.corFundo}
                     corDestaque={time.corDestaque}
+                    colaboradores={colaboradores.filter(
+                        (colaborador) => colaborador.time === time.nome
+                    )}
                 />
             ))}
         </>

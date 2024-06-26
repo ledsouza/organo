@@ -8,7 +8,7 @@ const Line = styled.div`
     width: 32px;
     height: 4px;
     background-color: ${(props) => props.color};
-    margin-top: 1px;
+    margin: 1px 0 32px 0;
     text-align: center;
 `;
 
@@ -17,13 +17,23 @@ const Time = (props) => {
         <section className="time" style={{ backgroundColor: props.corFundo }}>
             <h3>{props.nome}</h3>
             <Line color={props.corDestaque} />
-            <Colaborador />
+            <div className="time__colaboradores">
+                {props.colaboradores.map((colaborador) => (
+                    <Colaborador
+                        key={colaborador.nome}
+                        nome={colaborador.nome}
+                        cargo={colaborador.cargo}
+                        imagem={colaborador.imagem}
+                    />
+                ))}
+            </div>
         </section>
     );
 };
 
 Time.propTypes = {
     nome: PropTypes.string.isRequired,
+    colaboradores: PropTypes.array,
     corDestaque: PropTypes.string.isRequired,
     corFundo: PropTypes.string.isRequired,
 };

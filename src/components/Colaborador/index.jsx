@@ -1,17 +1,24 @@
 import "./Colaborador.css";
+import PropTypes from "prop-types";
 
-const Colaborador = () => {
+const Colaborador = ({ nome, cargo, imagem }) => {
     return (
         <div className="colaborador">
             <div className="cabecalho">
-                <img src="https://github.com/ledsouza.png" alt="Leandro Souza" />
+                <img src={imagem} alt={nome} />
             </div>
             <div className="rodape">
-                <h4>Leandro Souza</h4>
-                <h5>Cientista de Dados e Desenvolvedor Full Stack</h5>
+                <h4>{nome}</h4>
+                <h5>{cargo}</h5>
             </div>
         </div>
     );
+};
+
+Colaborador.propTypes = {
+    nome: PropTypes.string.isRequired,
+    cargo: PropTypes.string.isRequired,
+    imagem: PropTypes.string.isRequired,
 };
 
 export default Colaborador;
