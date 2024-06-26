@@ -1,10 +1,10 @@
 import "./Colaborador.css";
 import PropTypes from "prop-types";
 
-const Colaborador = ({ nome, cargo, imagem }) => {
+const Colaborador = ({ nome, cargo, imagem, corDeFundo }) => {
     return (
         <div className="colaborador">
-            <div className="cabecalho">
+            <div className="cabecalho" style={{ backgroundColor: corDeFundo }}>
                 <img src={imagem} alt={nome} />
             </div>
             <div className="rodape">
@@ -19,6 +19,7 @@ Colaborador.propTypes = {
     nome: PropTypes.string.isRequired,
     cargo: PropTypes.string.isRequired,
     imagem: PropTypes.string.isRequired,
+    corDeFundo: PropTypes.string.isRequired,
 };
 
 export default Colaborador;
